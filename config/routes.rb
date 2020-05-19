@@ -20,6 +20,6 @@ Rails.application.routes.draw do
   end
 
   resources :microposts , only: [:create, :destroy]
-  resources :relationships , only: [:createm ,:destroy]
+  resources :relationships , only: [:create ,:destroy]
   # ログインユーザがユーザをフォロー／アンフォローできるようにするルーティング
 end
