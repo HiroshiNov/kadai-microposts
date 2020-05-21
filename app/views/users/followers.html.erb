@@ -13,10 +13,10 @@
     <div class="col-sm-8">
         <ul class="nav nav-tabs nav-justified mb-3">
           <div class="row">
-            <li class="nav-item col-sm-3"><a href="<%= user_path(@user) %>" class="nav-link <%= "active" if current_page?(user_path(@user)) %>">Microposts <span class="badge badge-secondary"><%= @count_microposts %></span></a></li>
-            <li class="nav-item col-sm-3"><a href="<%= followings_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followings_user_path(@user)) %>">Followings <span class="badge badge-secondary"><%= @count_followings %></span></a></li>
-            <li class="nav-item col-sm-3"><a href="<%= followers_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followers_user_path(@user)) %>">Followers <span class="badge badge-secondary"><%= @count_followers %></span></a></li>
-            <li class="nav-item col-sm-3"><a href="<%= likes_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(likes_user_path(@user)) %>">Favorites  <span class="badge badge-secondary"><%= @count_favorites %></span></a></li>
+            <li class="nav-item col-sm-3 px-1"><a href="<%= user_path(@user) %>" class="nav-link <%= 'active' if current_page?(user_path(@user)) %>" style="width: 140px;">Microposts <span class="badge badge-secondary"><%= @count_microposts %></span></a></li>
+            <li class="nav-item col-sm-3 px-1"><a href="<%= followings_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followings_user_path(@user)) %>" style="width: 140px;">Followings <span class="badge badge-secondary"><%= @count_followings %></span></a></li>
+            <li class="nav-item col-sm-3 px-1"><a href="<%= followers_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followers_user_path(@user)) %>" style="width: 140px;">Followers <span class="badge badge-secondary"><%= @count_followers %></span></a></li>
+            <li class="nav-item col-sm-3 px-1"><a href="<%= likes_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(likes_user_path(@user)) %>" style="width: 140px;">Favorites <span class="badge badge-secondary"><%= @count_favorites %></span></a></li>
           </div>
         </ul>
         <%= render "users", users: @followers %>
