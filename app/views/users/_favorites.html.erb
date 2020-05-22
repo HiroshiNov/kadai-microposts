@@ -4,23 +4,23 @@
       <li class="media mb-3">
         <img class="mr-2 rounded" src="<%= gravatar_url(micropost.user, { size: 50 }) %>" alt="">
         <div class="media-body">
-          <div>
-            <%= link_to micropost.user.name, user_path(micropost.user) %> <span class="text-muted">post at <%= micropost.created_at %></span>
-          </div>
-          <div>
-            <p><%= micropost.content %></p>
-          </div>
-          <div class="row">
-            <div class="col-4 offset-4">
-              <%= render "favorites/favorite_button", micropost: micropost %>
+            <div>
+              <%= link_to micropost.user.name, user_path(micropost.user) %> <span class="text-muted">post at <%= micropost.created_at %></span>
             </div>
-            <div class="col-4">
-              <% if current_user == micropost.user %>
-              <%= link_to "Delete",micropost, method: :delete, data: { confirm: "You sure?"}, class: "btn btn-danger btn-sm" %>
-              <% end %>
+            <div>
+              <p><%= micropost.content %></p>
+            </div>
+            <div class="row">
+              <div class="col-sm-4 offset-sm-4">
+                  <%= render "favorites/favorite_button", micropost: micropost %>
+              </div>
+              <div class="col-sm-4">
+                <% if current_user == micropost.user %>
+                <%= link_to "Delete",micropost, method: :delete, data: { confirm: "You sure?"}, class: "btn btn-danger btn-sm" %>
+                <% end %>
+              </div>
             </div>
           </div>
-        </div>
       </li>
     <% end %>
   </ul>
